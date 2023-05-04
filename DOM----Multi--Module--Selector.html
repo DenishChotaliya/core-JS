@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM----Multi--Module--Selector</title>
+</head>
+<body>
+    <h1>WHat is DOM?</h1>
+    <h4>Documents Object Model - It represents the whole html document in consol.</h4>
+
+    <h2>Single ELement Selector</h2>
+    <h2>Multi ELement Selector</h2>
+
+    <h1 class="title-h2" id="first-h1">Title</h1>
+    <h1 class="title-h1" id="first-h1">Lorem, ipsum.</h1>
+    <h1 class="title-h1" id="first-h1-2" name="name-h1">Lorem ipsum dolor sit amet.</h1>
+    <h1 class="title-h1" id="first-h1-3">Lorem ipsum dolor sit amet.</h1>
+    <h1 class="title-h1" id="first-h1-4">Lorem ipsum dolor sit amet.</h1>
+    <h1 class="title-h1" id="first-h1-5">Lorem ipsum dolor sit amet.</h1>
+    <p class="title-p" id="first-p"></p>
+
+
+    <script>
+        console.log(document);
+        let element = document.getElementsByClassName("title-h2")
+        console.log(element);
+
+        let element2 = document.getElementsByTagName("p")
+        console.log(element2);
+
+        let element3 = document.getElementsByName("name-h1")
+        console.log(element3);
+
+        let element4 = document.querySelectorAll(".title-h1")
+        console.log(element4);
+
+
+    </script>
+
+</body>
+</html>
