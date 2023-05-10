@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IF---ELSE</title>
+    <style></style>
+</head>
+<body>
+    
+    <script>
+        let age = prompt("enter your age")
+            console.log(age);
+            console.log(typeof age);
+
+            age = Number.parseInt(age)
+            console.log(typeof age);
+
+            if (age < 4) {
+                alert("You are toddler")
+            }
+            else if (age >= 4 && age <= 13) {
+                alert("you are teen")
+            }
+            else if (age >= 14 && age <= 30) {
+                alert("you are young")
+            }
+            else if (age >= 31 && age <= 80) {
+                alert("you are old")
+            }
+            else if (age >= 81 && age <= 100) {
+                alert("you are about to dead")
+            }
+            else if (age > 100) {
+                alert("you are old")
+                
+            }
+            else{
+                alert("you are old")
+            }
+            
+
+
+    </script>
+</body>
+</html>
