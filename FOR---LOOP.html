@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR--LOOP</title>
+</head>
+<body>
+    
+    <script>
+        let number = prompt("enter your number")
+            console.log(typeof number, number);
+            number = Number.parseInt(number) // .parseInt means to chande data type value in another data type value
+            console.log(typeof number, number);
+
+        //     for (let index = 0; index <= number; index++) {  /// whatever you write in () is called expression ---  intialise, condition, increment
+        //         console.log(index);  //Whatever you enter in {} bracket is called statement
+        //     }
+
+        for (let index = 0; index <= number; index++) {
+            console.log(index);
+            
+        }
+
+        let array = [1,2,3,4,5, "abc"]
+        for (let index = 0; index < array.length; index++) {
+            console.log(index);
+            
+        }
+         
+           
+
+            
+
+    </script>
+</body>
+</html>

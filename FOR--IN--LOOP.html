@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOR--IN--LOOP</title>
+</head>
+<body>
+    
+
+    <script>
+        
+
+        let obj = {
+            student1 : 10,
+            student2 : 20,
+            student3 : 30,
+            student4 : 40,
+            obj2 : {
+                student5 : 50,
+                student6 : 60,
+                student7 : 70,
+                student8 : 80,
+            }
+        }
+
+        let abc = obj
+            console.log(abc);
+        
+        let xyz = obj.obj2
+            console.log(xyz);
+        
+
+            for (let abc in obj.student1){
+                console.log(abc + obj.student1 [abc]);
+            }
+
+            // for (let xyz in obj.obj2){
+            //     console.log(xyz + obj.obj2 [xyz]);
+            // }
+
+
+    </script>
+</body>
+</html>
