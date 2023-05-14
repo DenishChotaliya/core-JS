@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALIDATION</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .sec-one {
+            background: linear-gradient(217deg, rgba(255, 0, 0, .8), rgba(255, 0, 0, 0) 70.71%), 
+            linear-gradient(127deg, rgba(0, 255, 0, .8),  rgba(0, 255, 0, 0) 70.71%), 
+            linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+            height: 600px;
+        }
+
+        .container {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        input{
+            margin: 20px 25px;
+        }
+        .email{
+            margin: 0 25px 0 0;
+        }
+        .mobile{
+            margin-right: 20px;
+        }
+        input[type="submit"]{
+            width: 30%;
+            height: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="sec-one">
+        <div class="container">
+            <form onsubmit="return validation()">
+                <div>
+                    <label for="username">username</label>
+                    <input type="text" name="" id="username"><span id="usererror"></span>
+                </div>
+                <div>
+                    <label for="password">password</label>
+                    <input type="password" name="" id="password"><span id="passerror"></span>
+                </div>
+                <div>
+                    <label for="email" class="email">email</label>
+                    <input type="email" name="" id="email"><span id="emailerror"></span>
+                </div>
+                <div>
+                    <label for="mobile" class="mobile">mobile</label>
+                    <input type="tel" name="" id="mobile"><span id="mobileerror"></span>
+                </div>
+                <div>
+                    <input type="submit" value="submit" id="submit">
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <script>
+        let username = document.getElementById("username")
+        let usererror = document.getElementById("usererror")
+        let password = document.getElementById("password")
+        let passerror = document.getElementById("passerror")
+        let email = document.getElementById("email")
+        let emailerror = document.getElementById("emailerror")
+        let mobile = document.getElementById("mobile")
+        let mobileerror = document.getElementById("mobileerror")
+        let submit = document.getElementById("submit")
+
+        function validation() {
+            if (username.value == "") {
+                console.log("error");
+                event.preventDefault()
+                usererror.innerHTML = "<b>Enter User-Name</b>"
+
+            }
+            else{
+                usererror.innerHTML = ""
+
+            }
+            if (password.value == "") {
+                console.log("password-error");
+                event.preventDefault()
+                passerror.innerHTML = "<i>Enter Password</i>"
+            }
+            else if (password.value.length < 8) {
+                passerror.innerHTML = "<i>Min 8 Charcter</i>"
+                event.preventDefault()
+            }
+            else{
+                passerror.innerHTML = ""
+            }
+            if (email.value == "") {
+                emailerror.innerHTML = "<i>Enter Email</i>"
+                evenr.preventDefault()
+            }
+            else{
+                emailerror.innerHTML = ""
+            }
+            if (mobile.value == "") {
+                mobileerror.innerHTML = "<u>Enter Mobile Number</u>"
+                event.preventDefault()
+            }
+            else if (mobile.value < 10) {
+                mobileerror.innerHTML = "<u>max 10 num</u>"
+                event.preventDefault()
+
+            }
+            else if (mobile.value > 10) {
+                mobileerror.innerHTML = "<u>min 10 num</u>"
+                event.preventDefault()
+
+            }
+            else{
+                mobileerror.innerHTML = "<u>Enter Mobile Number</u>"
+            }
+
+        }
+
+
+        
+    </script>
+</body>
+</html>
