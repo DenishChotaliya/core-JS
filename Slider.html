@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .slider-img{
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <img class="slider-img" src="bg.jpg" alt="">
+        <img class="slider-img" src="bg_2.jpg" alt="">
+        <img class="slider-img" src="bg_3.jpg" alt="">
+        <img class="slider-img" src="bg.jpg" alt="">
+        <img class="slider-img" src="bg_2.jpg" alt="">
+        <img class="slider-img" src="bg_3.jpg" alt="">
+        <img class="slider-img" src="bg.jpg" alt="">
+        <img class="slider-img" src="bg_2.jpg" alt="">
+        <img class="slider-img" src="bg_3.jpg" alt="">
+    </div>
+
+    <script>
+        let xyz = document.getElementsByClassName("slider-img")
+            counter = 0
+
+            function slider() {
+                for (let index = 0; index < xyz.length; index++) {
+                    xyz[index].style.display = "none"
+                    
+                }       
+                if (counter >= xyz.length) {
+                    counter = 0
+                }         
+                xyz[counter].style.display = "block"
+                counter++;
+
+                setTimeout(slider, 2000)
+            }
+            slider()
+    </script>
+</body>
+</html>
