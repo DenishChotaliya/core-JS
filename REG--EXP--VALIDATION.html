@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REG--EXP--VALIDATION</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .validation {
+            margin: 100px;
+        }
+        input {
+            margin: 20px 0;
+        }
+        input[type = "submit"]{
+            padding: 15px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="validation">
+        <form action="#" onsubmit="regValid()">
+            <!-- <div>
+                <label for="name">name</label>
+                <input type="text" name="" id="name">
+            </div> -->
+            <div>
+                <label for="email">email</label>
+                <input type="email" name="" id="email"><span id="emailerror"></span>
+            </div>
+            <div>
+                <label for="password">password</label>
+                <input type="password" name="" id="password"><span id="passerror"></span>
+            </div>
+            <div>
+                <label for="confpass">confirm password</label>
+                <input type="password" name="" id="confpass"><span id="passweeor_2"></span>
+            </div>
+            <div><input type="submit" value="save"></div>
+        </form>
+    </div>
+
+
+    <script>
+        let email = document.getElementById("email")
+        let emailerror = document.getElementById("emailerror")
+        let password = document.getElementById("password")
+        let passerror = document.getElementById("passerror")
+        let confpass = document.getElementById("confpass")
+        let passweeor_2 = document.getElementById("passweeor_2")
+
+
+            function regValid() {
+                var abc = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+                if (email.value.length < 7) {
+                    emailerror.innerHTML = "alteast 7"
+                }
+                else if (email.value != "") {
+                    if (email.value.match(abc)) {
+                        emailerror.innerHTML = "valid email address"
+                        
+                    }
+                    else{
+                        emailerror.innerHTML = "not a valid address"
+
+                    }
+                }
+                else{
+                    emailerror.innerHTML = ""
+
+                }
+                if (password.value.length < 8) {
+                    passerror.innerHTML = "atleast 8 char"
+                }
+                else if (password.value != "") {
+                    if (password.value.search(/[0-9]/) == -1) {
+                        passerror.innerHTML = "atleast 1 number"
+
+                    }
+                    else if (password.value.search(/[a-z]/) == -1) {
+                        passerror.innerHTML = "atleast 1 SMALL ALPHABET"
+                    
+                    }
+                    else if (password.value.search(/[A-Z]/) == -1) {
+                        passerror.innerHTML = "atleast 1 big ALPHABET"
+                    
+                    }
+                    else if (password.value.search(/[!\@\#\$\%\^\&\*]/) == -1) {
+                        passerror.innerHTML = "atleast 1 special char"
+                    
+                    }
+                    else{
+                        passerror.innerHTML = "valid password"
+
+                    }
+                }
+                else{
+                    passerror.innerHTML = ""
+
+                }
+                if (password.value != confpass.value) {
+                    passweeor_2.innerHTML = "password not match"
+                }
+                else{
+                    passweeor_2.innerHTML = "password match"
+
+                }
+
+
+            }
+
+
+          
+
+
+
+
+    </script>
+</body>
+</html>

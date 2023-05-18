@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider---2</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .slider{
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <img class="images" src="https://picsum.photos/id/21/1000/400" alt="">
+        <img class="images" src="https://picsum.photos/id/31/1000/400" alt="">
+        <img class="images" src="https://picsum.photos/id/41/1000/400" alt="">
+        <img class="images" src="https://picsum.photos/id/51/1000/400" alt="">
+        <img class="images" src="https://picsum.photos/id/61/1000/400" alt="">
+        <img class="images" src="https://picsum.photos/id/71/1000/400" alt="">
+    </div>
+
+
+    <script>
+        let abc = document.getElementsByClassName("images")
+            console.log(abc);
+        let count = 0
+
+            function sliderimg() {
+                for (let index = 0; index < abc.length; index++) {
+                    abc[index].style.display = "none"
+                    
+                }
+                if (count >= abc.length) {
+                    count = 0
+                }
+                abc[count].style.display = "block"
+                count++
+
+                setTimeout(sliderimg, 1500)
+            }
+            sliderimg()
+    </script>
+</body>
+</html>
