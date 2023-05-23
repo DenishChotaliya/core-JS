@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        .sec{
+            background-color: gray;
+            height: 800px;
+
+        }
+        .col-50{
+            border: 2px solid;
+            width: 50%;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: rgb(172, 169, 82);
+        }
+        p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <section class="sec">
+        <div class="col-50">
+            <form onsubmit="return validForm()">
+                <input type="text" required id="username" placeholder="enter your name"> <br>
+                <p id="usererror"></p>
+                <input type="password" id="userpassword" placeholder="enter your password" name="" id=""> <br>
+                <p id="passworderror"></p>
+                 male<input type="radio" name="gender" id="male"> <br>
+                 famale<input type="radio" name="gender" id="famale">
+                 <p id="radioer"></p>
+                 <!-- <span>hobbies</span> -->
+                 swiming <input type="checkbox" name="" id="swiming" class="hobbies"> <br>
+                 travel <input type="checkbox" name="" id="travel" class="hobbies">  <br>
+                 game <input type="checkbox" name="" id="game" class="hobbies">  <br>
+                 outing <input type="checkbox" name="" id="outing" class="hobbies"> <br>
+                <input type="submit" value="login">
+            </form>
+        </div>
+    </section>
+
+    <script>
+        let username = document.getElementById("username")
+        let password = document.getElementById("userpassword")
+        let usererror = document.getElementById("usererror")
+        let passworderror = document.getElementById("passworderror")
+        let male = document.getElementById("male")
+        let famale = document.getElementById("famale")
+        let radioer = document.getElementById("radioer")
+        let swiming = document.getElementById("swiming")
+        let travel = document.getElementById("travel")
+        let game = document.getElementById("game")
+        let outing = document.getElementById("outing")
+        // let hobbies = document.getElementsByClassName("hobbies")
+        // console.log(hobbies);
+        
+        // let count = 1
+
+        let name = "virat"
+        // console.log(typeof username);
+        // console.log(typeof  password);
+        // console.log(typeof  name);
+        console.log(usererror);
+        console.log(passworderror);
+       function validForm() {
+        // console.log(username.value);
+        // console.log(password.value);
+         if (username.value == "") {
+            // document.getElementById("usererror").innerHTML = "enter your name"
+            usererror.innerHTML = "enter your name"
+            // count = 0
+            event.preventDefault()
+         }
+         else{
+            document.getElementById("usererror").innerHTML = ""
+            // count = 1
+         }
+         if (password.value == "") {
+            passworderror.innerHTML = "enter your password fisrt"
+            // count = 0
+            event.preventDefault()
+         }
+         else if(password.value.length < 8){
+            // console.log("8 max");
+            passworderror.innerHTML = "max 8 char"
+            // count = 0
+            event.preventDefault()
+         }
+         else{
+            document.getElementById("passworderror").innerHTML = ""
+            // count = 1
+         }
+         if(male.checked == false && famale.checked == false){
+            // console.log("error");
+            radioer.innerHTML = "plz select the one value"
+            event.preventDefault()
+         }
+        if(outing.checked != true){
+            console.log("error");
+            event.preventDefault()
+        }
+         else{
+           console.log("done");
+        }
+
+        //    if(count){
+        //     return true
+        //    }
+        //    else{
+        //        return false
+        //    }
+        }
+    </script>
+</body>
+</html>
